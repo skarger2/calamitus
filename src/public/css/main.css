@@ -1,0 +1,318 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+body{
+	font-family: "IBM Plex Sans Arabic";
+	background-color: #ffb200;
+}
+
+/********************HEADER********************/
+.contain-header{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.logo3D{
+	height: 35vh;
+}
+.logo3Dcontenedor{
+	width: 100%;
+	flex-grow: 1;
+}
+.spline-watermark{
+	display: none;
+}
+.navPrin{
+	background-color: #bf3922;
+	color: white;
+	flex-shrink: 0;
+}
+.navPrin ul{
+    display: flex;
+    list-style: none;
+}
+.navPrin li{
+	margin: 0px 10px;
+	font-size: 2em;
+	font-weight: bolder;
+}
+.navPrin a{
+	color: white;
+	text-decoration: none;
+}
+@media screen and (max-width: 680px){
+	.navPrin ul{
+		justify-content: center;
+	}
+}
+
+/********************LISTA PRODUCTOS********************/
+/*.filter{
+	font-size: 1.5em;
+	height: 30px;
+    display: flex;
+    align-items: center;
+}
+.filter select{
+	height: 25px;
+}*/
+.listaProd{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
+/*.filter{
+	width: 100%;
+}*/
+.tarjeta{
+	height: 400px;
+	margin: 5% 0%;
+	width: 30%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.tarjeta a{
+	text-decoration: none;
+	color: white;
+	text-align: center;
+}
+.tarjeta p{
+	font-size: 2em;
+	font-weight: bolder;
+}
+@media screen and (max-width: 680px){
+	.listaProd{
+		flex-direction: column;
+	}
+	.tarjeta{
+		width: 60%;
+		margin: 5% auto;
+	}
+}
+
+/********************FORMULARIO*********************/
+.formulario{
+	display: flex;
+	justify-content: center;
+}
+.formulario form{
+	margin: 5% 0%;
+	width: 40%;
+}
+.formulario input{
+    height: 30px;
+    width: 100%;
+	margin: 3% 0%;
+}
+.formulario textarea{
+	height: 100px;
+	width: 100%;
+	margin: 3% 0%;
+}
+.formulario button{
+	height: 30px;
+	width: 50%;
+
+}
+/********************VISTA DE PRODUCTO*********************/
+.tarProd{
+	width: 70%;
+	margin: 5% auto;
+	background-color: #923e25;
+	display: flex;
+}
+.imgProd{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 50%;
+}
+.desProd{
+	display: flex;
+	flex-direction: column;
+    justify-content: space-around;
+    width: 50%;	
+    color: whitesmoke;
+    padding: 3%;
+}
+.imgProd img{
+	width: 100%;
+}
+.imgProd button{
+	width: 80px;
+	height: 80px;
+}
+.chgImg{
+	background-image: url('../img/filtro blanco.png'),url('../img/catan.jpg');
+	background-size: cover;
+	border: none;
+	cursor: pointer;
+}
+.desProd ul{
+	padding: 0% 10%;
+}
+.btnComprar{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-size: 1.5em;
+	font-weight: bolder;
+}
+.btnComprar a{
+	text-align: right;
+	padding: 2% 3%;
+	background-color: #da6e00;
+	color: whitesmoke;
+	text-decoration: none;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+}
+@media screen and (max-width: 700px) {
+	.tarProd{
+		flex-direction: column;
+	}
+    .imgProd,.desProd{
+    	width: 100%;
+    }	
+}
+/********************PRODUCTOS RELACIONADOS***********************/
+.RelatedProd{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+.titleRelProd{
+   width: 100%;
+   border-bottom: 3px solid black;
+}
+.btnSlider{
+	width: 5%;
+	text-align: center;
+}
+.SlideRelProd{
+	width: 90%;
+	display: flex;
+	justify-content: space-between;
+}
+.tarjetaChica{
+	height: 150px;
+	margin: 5% 0%;
+	width: 16%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+}
+.tarjetaChica a{
+	text-decoration: none;
+	color: white;
+	text-align: center;
+}
+.tarjetaChica p{
+	font-size: 1.5em;
+	font-weight: bolder;
+}
+@media screen and (max-width: 700px){
+	#prod5, #prod4{
+		display: none;
+	}
+
+}
+/********************FOOTER********************/
+footer{
+	background-color: black;
+	color: grey;
+}
+footer h3{
+	font-size: 2em;
+	padding: 2% 0%;
+}
+footer h6{
+	font-size: 1.2em;
+	padding-bottom: 2%;
+}
+.copyright{
+	color: grey;
+	text-align: center;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+.copyright .socialNet{
+	display: flex;
+	justify-content: space-around;
+}
+.copyright .socialNet img{
+	width: 20px;
+	height: 20px;
+}
+.siteFoot{
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: space-between;
+}
+.siteFoot>div{
+	padding: 1%;
+}
+.about{
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+}
+.categories{
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+}
+.categories a{
+    color: grey;
+    text-decoration: none;
+    padding: 2%;
+}
+.categories .mercado{
+	padding-bottom: 3%;
+}
+.categories .mercado img{
+    width: 100px;
+    text-align: center;
+}
+.socialNet{
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	width: 20%;
+}
+.socialNet img{
+	width: 50px;
+	height: 50px;
+}
+.socialNet .siteLogo{
+	width: 100%;
+	margin-bottom: 10%;
+}
+.socialNet>.siteLogo>img{
+	width: 100%;
+	height: 100%;
+}
+@media screen and (max-width: 800px){
+	.about{
+		width: 100%;
+	}
+	.categories,.socialNet{
+		width: 50%;
+	}
+
+}
+@media screen and (max-width: 600px){
+	.about,.categories,.socialNet{
+		width: 100%;
+	}
+
+}

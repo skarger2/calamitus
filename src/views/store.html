@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title><%= title %></title>
+	<%-include ('partials/head.html') %>
+
+</head>
+<body>
+    <%-include ('partials/navigation.html') %>
+
+<!--     <div class="filter">
+	    <form action="js/filter.js" method="get">
+	    	<label for="filter">FILTRAR: </label>
+	    	<select name="filterOptions">
+            <option value="todos" selected>Todos</option>
+            <option value="cartas" >Cartas</option>
+            <option value="fichas" >Fichas</option>
+            <option value="imp3D" >Impresiones 3D</option>
+            </select>
+	    </form>
+	</div> -->
+
+	<main class="listaProd">
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/catan.jpg');background-size: cover;">
+			<a href="/prod1">
+				<p>CATAN</p>
+				<p>$600</p>
+			</a>
+		</div>
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/carcassonne.jpg');background-size:cover;">
+			<a href="/prod1">
+				<p>CARCASSONNE</p>
+				<p>$600</p>
+			</a>
+		</div>
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/dixit.jpg');background-size:cover;">
+			<a href="/prod1">
+				<p>DIXIT</p>
+				<p>$600</p>
+			</a>
+		</div>
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/hive.jpg');background-size:cover;">
+			<a href="/prod1">
+				<p>HIVE</p>
+				<p>$600</p>
+			</a>
+		</div>
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/nonaga.jpg');background-size:cover;">
+			<a href="/prod1">
+				<p>NONAGA</p>
+				<p>$600</p>
+			</a>
+		</div>
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/splendor.jpg');background-size:cover;">
+			<a href="/prod1">
+				<p>SPLENDOR<br>$600</p>
+			</a>
+		</div>
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/star realms.jpg');background-size:cover;">
+			<a href="/prod1">
+				<p>STAR REALMS</p>
+				<p>$600</p>
+			</a>
+		</div>
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/ugha bugha.jpg');background-size:cover;">
+			<a href="/prod1">
+				<p>UGHA BUGHA</p>
+				<p>$600</p>
+			</a>
+		</div>
+		<div class="tarjeta" style="background-image: linear-gradient(transparent, black), url('img/virus.jpg');background-size:cover;">
+			<a href="/prod1">
+				<p>VIRUS</p>
+				<p>$600</p>
+			</a>
+		</div>
+	</main>
+	<%-include ('partials/footer.html') %>
+</body>
+</html>
