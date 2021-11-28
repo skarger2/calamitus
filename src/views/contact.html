@@ -2,16 +2,17 @@
 <html lang="en">
 <head>
 	
-	<title>Contacto</title>
+	<title><%=title %></title>
 
 	<%-include ('partials/head.html') %>
+	<link rel="stylesheet" href="css/form.css">
 
 </head>
 
 <body>
     <%-include ('partials/navigation.html') %>
     <section class="formulario">
-	  	<form>
+	  	<form action="/contact" method="post">
 		  	<label for="name">Nombre</label><br>
 			<input type="name"><br>
 			<label for="email">Email</label><br>

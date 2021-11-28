@@ -28,6 +28,14 @@ body{
 	background-color: #bf3922;
 	color: white;
 	flex-shrink: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.navPrin input{
+	margin: 0% 3%;
+	border: none;
+	background: none;
 }
 .navPrin ul{
     display: flex;
@@ -58,7 +66,7 @@ body{
 .filter select{
 	height: 25px;
 }*/
-.listaProd{
+#listaProd{
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
@@ -82,7 +90,44 @@ body{
 .tarjeta p{
 	font-size: 2em;
 	font-weight: bolder;
+	text-transform: uppercase;
 }
+.tarjeta .precio::before{
+    content: "$";
+}
+.tarjetaX2{
+	height: 400px;
+	margin: 5% 0%;
+	width: 60%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+}
+.tarjetaX2 a{
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	margin: 4%;
+}
+.tarjetaX2 p{
+	margin: 2%;
+	font-size: 2em;
+	font-weight: bolder;
+	text-transform: uppercase;
+}
+.precio::before{
+    content: "$";
+}
+
+.tarjeta, .tarjetaX2{
+	transition: 0.8s;
+}
+.tarjeta:hover, .tarjetaX2:hover{
+	transform: scaleY(105%);
+}
+
 @media screen and (max-width: 680px){
 	.listaProd{
 		flex-direction: column;
@@ -91,32 +136,11 @@ body{
 		width: 60%;
 		margin: 5% auto;
 	}
+	.tarjetaX2{
+		justify-content: center;
+	}
 }
 
-/********************FORMULARIO*********************/
-.formulario{
-	display: flex;
-	justify-content: center;
-}
-.formulario form{
-	margin: 5% 0%;
-	width: 40%;
-}
-.formulario input{
-    height: 30px;
-    width: 100%;
-	margin: 3% 0%;
-}
-.formulario textarea{
-	height: 100px;
-	width: 100%;
-	margin: 3% 0%;
-}
-.formulario button{
-	height: 30px;
-	width: 50%;
-
-}
 /********************VISTA DE PRODUCTO*********************/
 .tarProd{
 	width: 70%;

@@ -9,21 +9,11 @@
 <body>
     <%-include ('partials/navigation.html') %>
 
-<!--     <div class="filter">
-	    <form action="js/filter.js" method="get">
-	    	<label for="filter">FILTRAR: </label>
-	    	<select name="filterOptions">
-            <option value="todos" selected>Todos</option>
-            <option value="cartas" >Cartas</option>
-            <option value="fichas" >Fichas</option>
-            <option value="imp3D" >Impresiones 3D</option>
-            </select>
-	    </form>
-	</div> -->
-
-	<main id="listaProd">
+    <main id="listaProd">
 		
 	</main>
+
+	<%-include ('partials/footer.html') %>
 	<script>
 
 		let listaProd = new String();
@@ -32,7 +22,7 @@
 		let nameProd= new String();
 		let priceProd= new String();
 
-        fetch('http://localhost:3000/productosJSON')
+        fetch('http://localhost:3000/prod_cartasJSON')
 		    .then(response => response.json())
 		    .then(json => data = json)
 		    .then(data=>{
@@ -62,6 +52,5 @@
 			}
         })
 	</script>
-	<%-include ('partials/footer.html') %>
 </body>
 </html>
