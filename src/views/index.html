@@ -42,7 +42,7 @@
 				tarjeta[i].setAttribute("style",`background-image:linear-gradient(transparent, black),url('img/${data[i].nombre}.jpg')`)
 				tarjeta[i].style.backgroundSize = "cover"
 
-				linkProd[i].setAttribute("href","/prod1")
+				linkProd[i].setAttribute("href",`/${data[i].nombre}`)
 
 				nameProd[i].innerText = data[i].nombre;
 				priceProd[i].setAttribute("class","precio")

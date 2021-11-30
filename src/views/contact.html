@@ -12,14 +12,14 @@
 <body>
     <%-include ('partials/navigation.html') %>
     <section class="formulario">
-	  	<form action="/contact" method="post">
+	  	<form id="formComment" action="/contact" method="post">
 		  	<label for="name">Nombre</label><br>
-			<input type="name"><br>
+			<input id="nombre" type="name" name="name" required><br>
 			<label for="email">Email</label><br>
-		  	<input type="email"><br>
+		  	<input id="correo" type="email" name="email" required><br>
 		  	<label for="comment">Deje su mensaje</label><br>
-  			<textarea></textarea><br>
-		  	<button type="submit">ENVIAR</button>
+  			<textarea id="comentario" name="comment" required></textarea><br>
+		  	<button id="subComment" type="submit">ENVIAR</button>
 	  	</form>	
 	</section>
 	<%-include ('partials/footer.html') %>

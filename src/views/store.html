@@ -26,40 +26,37 @@
 	</main>
 	<script>
 
-		let listaProd = new String();
-		let tarjeta= new String();
-		let linkProd= new String();
-		let nameProd= new String();
-		let priceProd= new String();
+		function crearTarjeta(objeto){
+			let listaProd , tarjeta , linkProd , nameProd , priceProd;
+
+            listaProd = document.getElementById('listaProd')
+			tarjeta = document.createElement('div')
+			linkProd = document.createElement('a')
+			nameProd = document.createElement('p')
+			priceProd = document.createElement('p')
+
+			tarjeta.setAttribute("class","tarjeta")
+			tarjeta.setAttribute("style",`background-image:linear-gradient(transparent, black),url('img/${objeto.nombre}.jpg')`)
+			tarjeta.style.backgroundSize = "cover"
+
+			linkProd.setAttribute("href",`/${objeto.nombre}`)
+
+			nameProd.innerText = objeto.nombre;
+			priceProd.setAttribute("class","precio")
+			priceProd.innerText = objeto.precio;
+
+			linkProd.appendChild(nameProd)
+			linkProd.appendChild(priceProd)
+			tarjeta.appendChild(linkProd)
+			listaProd.appendChild(tarjeta)
+		}
 
         fetch('http://localhost:3000/productosJSON')
 		    .then(response => response.json())
 		    .then(json => data = json)
 		    .then(data=>{
 		    
-			for(let i=0; i<=data.length ;i++){
-				listaProd[i] = document.getElementById('listaProd')
-				tarjeta[i] = document.createElement('div')
-				linkProd[i] = document.createElement('a')
-				nameProd[i] = document.createElement('p')
-				priceProd[i] = document.createElement('p')
-
-				tarjeta[i].setAttribute("class","tarjeta")
-				tarjeta[i].setAttribute("style",`background-image:linear-gradient(transparent, black),url('img/${data[i].nombre}.jpg')`)
-				tarjeta[i].style.backgroundSize = "cover"
-
-				linkProd[i].setAttribute("href","/prod1")
-
-				nameProd[i].innerText = data[i].nombre;
-				priceProd[i].setAttribute("class","precio")
-				priceProd[i].innerText = data[i].precio;
-
-				linkProd[i].appendChild(nameProd[i])
-				linkProd[i].appendChild(priceProd[i])
-				tarjeta[i].appendChild(linkProd[i])
-				listaProd[i].appendChild(tarjeta[i])
-
-			}
+		    data.forEach(element=> crearTarjeta(element));
         })
 	</script>
 	<%-include ('partials/footer.html') %>

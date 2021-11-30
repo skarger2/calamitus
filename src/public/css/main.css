@@ -3,11 +3,24 @@
 	padding: 0px;
 	box-sizing: border-box;
 }
-body{
-	font-family: "IBM Plex Sans Arabic";
-	background-color: #ffb200;
+:root{
+	--primaryColor: #47243c;
+	--secondaryColor: #76689a;
+	--accentColor: 	#903373;
+	--btn-primaryColor: #8d3c4b;
+	--btn-secondaryColor: #844c82;
+	--paddingBaseValue: 1rem;
+	--marginBaseValue: 1rem;
+	--fontsizeBaseValue: 2rem;
 }
 
+body{
+	font-family: "IBM Plex Sans Arabic";
+	background-color: var(--primaryColor);
+}
+h1{
+	text-transform: uppercase;
+}
 /********************HEADER********************/
 .contain-header{
 	display: flex;
@@ -19,13 +32,11 @@ body{
 }
 .logo3Dcontenedor{
 	width: 100%;
-	flex-grow: 1;
-}
-.spline-watermark{
-	display: none;
+	height: 100%;
+	text-align: center;
 }
 .navPrin{
-	background-color: #bf3922;
+	background-color: var(--secondaryColor);
 	color: white;
 	flex-shrink: 0;
 	display: flex;
@@ -142,19 +153,20 @@ body{
 }
 
 /********************VISTA DE PRODUCTO*********************/
-.tarProd{
+#tarProd{
 	width: 70%;
 	margin: 5% auto;
-	background-color: #923e25;
+	background-color: var(--accentColor);
 	display: flex;
+	flex-direction: row;
 }
-.imgProd{
+.imgProd_cont{
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	width: 50%;
 }
-.desProd{
+.desProd_cont{
 	display: flex;
 	flex-direction: column;
     justify-content: space-around;
@@ -162,20 +174,18 @@ body{
     color: whitesmoke;
     padding: 3%;
 }
-.imgProd img{
+.imgProd_cont img{
 	width: 100%;
 }
-.imgProd button{
+.imgProd_cont button{
 	width: 80px;
 	height: 80px;
 }
 .chgImg{
-	background-image: url('../img/filtro blanco.png'),url('../img/catan.jpg');
-	background-size: cover;
 	border: none;
 	cursor: pointer;
 }
-.desProd ul{
+.desProd_cont ul{
 	padding: 0% 10%;
 }
 .btnComprar{
@@ -188,7 +198,8 @@ body{
 .btnComprar a{
 	text-align: right;
 	padding: 2% 3%;
-	background-color: #da6e00;
+	background-color: var(--btn-secondaryColor);
+	border-radius: 5px;
 	color: whitesmoke;
 	text-decoration: none;
 	display: flex;
@@ -197,10 +208,10 @@ body{
     font-weight: bolder;
 }
 @media screen and (max-width: 700px) {
-	.tarProd{
+	#tarProd{
 		flex-direction: column;
 	}
-    .imgProd,.desProd{
+    .imgProd_cont,.desProd_cont{
     	width: 100%;
     }	
 }
@@ -296,7 +307,7 @@ footer h6{
 	width: 30%;
 }
 .categories a{
-    color: grey;
+    color: inherit;
     text-decoration: none;
     padding: 2%;
 }

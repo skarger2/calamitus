@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<title><%= title %></title>
+	<%-include ('../partials/head.html') %>
+
+</head>
+<body>
+    <%-include ('../partials/navigation.html') %>
+    
+    <main class="VistaProd">
+        <div id="tarProd">
+        	
+        </div>
+    </main>
+
+    <%-include ('../partials/relatedProducts.html') %>
+    <%-include ('../partials/footer.html') %>
+    <script>
+
+        function crearTarProd(objeto){
+            let tarProd_cont;
+
+            tarProd_cont=
+            `<div class="imgProd_cont">
+
+                <img id=imgProd src="img/${objeto.nombre}.jpg" alt="">
+                <button class="chgImg" style="background-image: url('../img/filtro blanco.png'),url('../img/${objeto.nombre}.jpg');
+    background-size: cover;" onclick="cambiarImagen('${objeto.nombre}.jpg')"></button>
+                <button class="chgImg" style="background-image: url('../img/filtro blanco.png'),url('../img/${objeto.nombre}.jpg');
+    background-size: cover;" onclick="cambiarImagen('ugha bugha.jpg')"></button>
+                <button class="chgImg" style="background-image: url('../img/filtro blanco.png'),url('../img/${objeto.nombre}.jpg');
+    background-size: cover;" onclick="cambiarImagen('nonaga.jpg')"></button>
+                <button class="chgImg" style="background-image: url('../img/filtro blanco.png'),url('../img/${objeto.nombre}.jpg');
+    background-size: cover;" onclick="cambiarImagen('star realms.jpg')">
+                </button><button class="chgImg" style="background-image: url('../img/filtro blanco.png'),url('../img/${objeto.nombre}.jpg');
+    background-size: cover;" onclick="cambiarImagen('splendor.jpg')"></button>
+            </div>
+            <div class="desProd_cont">
+                <h1>${objeto.nombre}</h1>
+                <p>Supone un riesgo tomar una decisión basándose en la visualización de un color en un monitor. Para asegurarse de que el color es el adecuado, le recomendamos utilizar un muestrario de color RAL físico.</p>
+                <h3>Características</h3>
+                <ul>
+                    <li>Peso: ${objeto.peso}</li>
+                    <li>Altura: ${objeto.altura}</li>
+                    <li>Ancho: ${objeto.ancho}</li>
+                </ul>
+                <div class="btnComprar">
+                    <p>$${objeto.precio}</p>
+                    <a href="https://mpago.la/2ecBTxz">Comprar</a>
+                </div>
+            </div>`
+
+            return tarProd_cont;
+        }
+
+        fetch('http://localhost:3000/productosJSON')
+            .then(response => response.json())
+            .then(json => data = json)
+            .then(data=>{
+            
+            let found = data.find(element => element.id==5);
+            let content = crearTarProd(found);
+            document.getElementById('tarProd').innerHTML=content;
+        })
+    </script>
+</body>
+</html>
