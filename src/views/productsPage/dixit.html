@@ -3,7 +3,7 @@
 <head>
 	
 	<title><%= title %></title>
-	<%-include ('../partials/head.html') %>
+	<%-include ('../partials/headProducts.html') %>
 
 </head>
 <body>
@@ -15,7 +15,7 @@
         </div>
     </main>
 
-    <%-include ('../partials/relatedProducts.html') %>
+    <%-include ('../partials/slideProducts.html') %>
     <%-include ('../partials/footer.html') %>
     <script>
 
@@ -26,7 +26,7 @@
             tarProd_cont=
             `<div class="imgProd_cont">
 
-                <img id=imgProd src="img/${objeto.nombre}.jpg" alt="">
+                <img id=imgProd src="../img/${objeto.nombre}.jpg" alt="">
                 <button class="chgImg" style="background-image: url('../img/filtro blanco.png'),url('../img/${objeto.nombre}.jpg');
     background-size: cover;" onclick="cambiarImagen('${objeto.nombre}.jpg')"></button>
                 <button class="chgImg" style="background-image: url('../img/filtro blanco.png'),url('../img/${objeto.nombre}2.jpg');

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	
-	<title><%= title %></title>
+	<title>Juegos con fichas - Calamitus</title>
 	<%-include ('partials/head.html') %>
 
 </head>
@@ -29,7 +29,7 @@
 			tarjeta.setAttribute("style",`background-image:linear-gradient(transparent, black),url('img/${objeto.nombre}.jpg')`)
 			tarjeta.style.backgroundSize = "cover"
 
-			linkProd.setAttribute("href",`/${objeto.nombre}`)
+			linkProd.setAttribute("href",`/store/${objeto.nombre}`)
 
 			nameProd.innerText = objeto.nombre;
 			priceProd.setAttribute("class","precio")
@@ -46,12 +46,17 @@
 		    .then(json => data = json)
 		    .then(data=>{
 		    
-		    data.forEach(element=>{
-		    	if(element.categoria_id==2){
-                    crearTarjeta(element);
-		    	}
-                
-		    });
+		    if(data.find(element => element.categoria_id==2)!=undefined){
+            	data.forEach(element=>{
+			    	if(element.categoria_id==2){
+	                    crearTarjeta(element);
+			    	}
+                });
+            }else{
+            	document.getElementById('listaProd').innerText="No queda ningun producto de esta categoria. :("
+            	document.getElementById('listaProd').style.color="white";
+            	document.getElementById('listaProd').style.padding="var(--paddingBaseValue)";
+            }
         })
 	</script>
 </body>

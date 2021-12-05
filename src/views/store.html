@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	
-	<title><%= title %></title>
+	<title>Tienda - Calamitus</title>
 	<%-include ('partials/head.html') %>
 
 </head>
@@ -39,7 +39,7 @@
 			tarjeta.setAttribute("style",`background-image:linear-gradient(transparent, black),url('img/${objeto.nombre}.jpg')`)
 			tarjeta.style.backgroundSize = "cover"
 
-			linkProd.setAttribute("href",`/${objeto.nombre}`)
+			linkProd.setAttribute("href",`/store/${objeto.nombre}`)
 
 			nameProd.innerText = objeto.nombre;
 			priceProd.setAttribute("class","precio")

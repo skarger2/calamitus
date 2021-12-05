@@ -1,0 +1,104 @@
+<section class="SlideProd">
+	<div class="titleSlideProd">
+		<h2>Productos relacionados</h2>
+	</div>
+	<div class="btnSlider">
+		<a id="btnSlider_left"><</a>
+	</div>
+	<div id="SlideProd_cont" class="SlideProd_cont">
+
+
+
+
+	</div>
+	<div class="btnSlider">
+	    <a id="btnSlider_right">></a>
+    </div>
+</section>
+
+<script>
+    function crearTarjetaChica(objeto,parentElement){
+		let producto=document.createElement('div');
+
+        producto.innerHTML = `<a href="/store/${objeto.nombre}"><p>${objeto.nombre}</p><p class="precio">${objeto.precio}</p></a>`;
+        
+        producto.setAttribute('class',"tarjetaChica");
+        producto.setAttribute('id',`${objeto.id}`);
+        
+        producto.setAttribute('style',`background-image :linear-gradient(transparent, black),url("../img/${objeto.nombre}.jpg");`);
+        
+        producto.style.backgroundSize = 'cover';
+
+
+        document.getElementById(parentElement).appendChild(producto);
+	}
+
+	function decrementar(index,arrayLength){
+		if (index>0) index--
+		else index = arrayLength-1;
+	return index;
+	}
+	function incrementar(index,arrayLength){
+		if (index<arrayLength-1) index++
+		else index = 0;
+	return index;
+	}
+
+	let listaTarjetas;
+    let indexIzq;
+    let medio;
+    let indexDer;
+    let tarjetaIzq;
+	let tarjetaDer;
+	var i;
+
+    fetch('http://localhost:3000/productosJSON')
+	    .then(response => response.json())
+	    .then(json => data = json)
+	    .then(data=>{
+
+	    if(data!=[]){
+	    	let btnSlider_left = document.getElementById('btnSlider_left')
+		    let btnSlider_right = document.getElementById('btnSlider_right')
+	        
+	    	for (i = 0; i < 3; i++) {
+	    		crearTarjetaChica(data[i],"SlideProd_cont")
+	    	}
+	    	listaTarjetas=document.querySelectorAll('.tarjetaChica');
+            indexIzq = 0,indexDer = i-1;
+            tarjetaIzq=listaTarjetas[indexIzq];
+	    	tarjetaDer=listaTarjetas[indexDer];
+
+	    	
+        }else{
+        	document.getElementsByClass('SlideProd_cont').innerText="No hay ningun producto para mostrar. :("
+        	document.getElementsByClass('SlideProd_cont').style.color="white";
+        	document.getElementsByClass('SlideProd_cont').style.padding="var(--paddingBaseValue)";
+        }
+    })
+
+	btnSlider_left.addEventListener("click",()=>{
+
+		medio = indexIzq
+		indexIzq = decrementar(indexIzq, data.length)
+    	indexDer = decrementar(indexDer, data.length)
+		document.getElementById('SlideProd_cont').innerHTML = "";
+		
+	    crearTarjetaChica(data[indexIzq],"SlideProd_cont")
+	    crearTarjetaChica(data[medio],"SlideProd_cont")
+	    crearTarjetaChica(data[indexDer],"SlideProd_cont")
+
+    })
+    btnSlider_right.addEventListener("click",()=>{
+  
+		medio = indexDer
+		indexIzq = incrementar(indexIzq, data.length)
+		indexDer = incrementar(indexDer, data.length)
+		document.getElementById('SlideProd_cont').innerHTML = "";
+		
+	    crearTarjetaChica(data[indexIzq],"SlideProd_cont")
+	    crearTarjetaChica(data[medio],"SlideProd_cont")
+	    crearTarjetaChica(data[indexDer],"SlideProd_cont")
+
+    })
+</script>

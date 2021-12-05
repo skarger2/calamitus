@@ -23,16 +23,14 @@ h1{
 }
 /********************HEADER********************/
 .contain-header{
+	height: 35vh;
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
 }
-.logo3D{
-	height: 35vh;
-}
 .logo3Dcontenedor{
 	width: 100%;
-	height: 100%;
+    height: calc(35vh - 20%);
 	text-align: center;
 }
 .navPrin{
@@ -216,29 +214,39 @@ h1{
     }	
 }
 /********************PRODUCTOS RELACIONADOS***********************/
-.RelatedProd{
+.SlideProd{
+	color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-wrap: wrap;
 }
-.titleRelProd{
+.titleSlideProd{
    width: 100%;
-   border-bottom: 3px solid black;
+   border-bottom: 3px solid white;
 }
 .btnSlider{
-	width: 5%;
+	width: 10%;
 	text-align: center;
 }
-.SlideRelProd{
-	width: 90%;
+.btnSlider a{
+	width: 100%;
+	background: none;
+	padding: var(--paddingBaseValue);
+	color: white;
+	font-size: var(--fontsizeBaseValue);
+	font-weight: bolder;
+	cursor: pointer;
+}
+.SlideProd_cont{
+	width: 80%;
 	display: flex;
 	justify-content: space-between;
 }
 .tarjetaChica{
 	height: 150px;
 	margin: 5% 0%;
-	width: 16%;
+	width: calc(100% / 3 - 30px);
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
@@ -253,8 +261,9 @@ h1{
 	font-weight: bolder;
 }
 @media screen and (max-width: 700px){
-	#prod5, #prod4{
-		display: none;
+
+	.tarjetaChica{
+		width: calc(100% / 3 - 20px);
 	}
 
 }
@@ -332,7 +341,7 @@ footer h6{
 	width: 100%;
 	margin-bottom: 10%;
 }
-.socialNet>.siteLogo>img{
+.socialNet>.siteLogo img{
 	width: 100%;
 	height: 100%;
 }
