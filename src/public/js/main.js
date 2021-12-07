@@ -1,3 +1,6 @@
+let imagenes = document.querySelectorAll('img');
+imagenes.forEach(element => element.setAttribute('loading','lazy'));
+
 function cambiarImagen(imagen){
 	document.getElementById('imgProd').setAttribute("src", "../img/"+imagen);
 }

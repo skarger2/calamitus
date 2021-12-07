@@ -16,6 +16,11 @@ app.use(cors())
 //routes
 app.use(require('./routes/index'));
 
+/*app.all('/',(req,res,next)=>{
+    res.render('mantenimiento.html', title:'sitio web en mantenimiento')
+    next();
+})*/
+
 //static files
 app.use(express.static(path.join(__dirname,'public')))
 

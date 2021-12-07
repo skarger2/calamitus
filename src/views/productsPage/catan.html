@@ -42,9 +42,9 @@
                 <p>Supone un riesgo tomar una decisión basándose en la visualización de un color en un monitor. Para asegurarse de que el color es el adecuado, le recomendamos utilizar un muestrario de color RAL físico.</p>
                 <h3>Características</h3>
                 <ul>
-                    <li>Peso: ${objeto.peso}</li>
-                    <li>Altura: ${objeto.altura}</li>
-                    <li>Ancho: ${objeto.ancho}</li>
+                    <li>Peso: ${objeto.peso} gr</li>
+                    <li>Altura: ${objeto.altura} cm</li>
+                    <li>Ancho: ${objeto.ancho} cm</li>
                 </ul>
                 <div class="btnComprar">
                     <p>$${objeto.precio}</p>
@@ -64,6 +64,15 @@
             let content = crearTarProd(found);
             document.getElementById('tarProd').innerHTML=content;
         })
+
+
+
+
+
     </script>
+    <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+data-preference-id="330634170-7fb6a015-3613-4380-9f87-de838247a202" data-source="button">
+</script>
+
 </body>
 </html>
